@@ -1,5 +1,5 @@
+@import 'reset.css';
 @import '../assets/fonts/Acme/css/acme.css';
-@import 'normalize.css';
 
 :root {
   --clr-primary-400: hsl(215, 100%, 43%);

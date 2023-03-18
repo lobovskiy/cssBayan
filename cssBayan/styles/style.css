@@ -4,7 +4,7 @@
 :root {
   --clr-primary-400: hsl(215, 100%, 43%);
 
-  --clr-primary-100: hsl(60, 36%, 95%);
+  --clr-secondary-100: hsl(60, 36%, 95%);
 
   --clr-neutral-100: hsl(197, 12%, 88%);
   --clr-neutral-999: hsl(0, 0%, 0%);
@@ -21,8 +21,30 @@ html {
   font-size: var(--fs-500);
   font-family: var(--ff-primary);
   color: var(--clr-neutral-999);
+  background-color: var(--clr-secondary-100);
 }
 
 body {
   min-height: 100vh;
+}
+
+h1 {
+  font-size: var(--fs-800);
+}
+
+.container {
+  --max-width: 30rem;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+.header-content,
+.main-content {
+  padding-block: 1.25rem;
+}
+
+.header-content {
+  border-bottom: solid var(--clr-neutral-100);
 }

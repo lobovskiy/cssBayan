@@ -32,6 +32,11 @@ h1 {
   font-size: var(--fs-800);
 }
 
+button {
+  background: none;
+  border: none;
+}
+
 .container {
   --max-width: 30rem;
   --padding: 1rem;
@@ -55,6 +60,10 @@ h1 {
 
 .item {
   --flow-spacer: 1.25rem;
+
+  display: block;
+  width: 100%;
+  cursor: pointer;
 }
 
 .item__bar {

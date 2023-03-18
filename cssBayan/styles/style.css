@@ -55,7 +55,7 @@ button {
 }
 
 .item {
-  --item-transition: 200ms ease-in-out;
+  --item-transition: 300ms ease-in-out;
 
   display: block;
   width: 100%;

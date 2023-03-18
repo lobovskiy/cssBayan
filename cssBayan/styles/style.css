@@ -85,3 +85,9 @@ h1 {
 .item__icon-toggle::after {
   transform: translate(-50%, -50%) rotate(-90deg);
 }
+
+.item__img img {
+  margin-inline: auto;
+  height: 15em;
+  object-fit: contain;
+}

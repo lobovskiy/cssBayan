@@ -40,6 +40,10 @@ h1 {
   margin-inline: auto;
 }
 
+:where(.flow > :not(:first-child)) {
+  margin-top: var(--flow-spacer, 1em);
+}
+
 .header-content,
 .main-content {
   padding-block: 1.25rem;
@@ -47,4 +51,8 @@ h1 {
 
 .header-content {
   border-bottom: solid var(--clr-neutral-100);
+}
+
+.item {
+  --flow-spacer: 1.25rem;
 }

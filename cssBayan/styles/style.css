@@ -73,8 +73,13 @@ button {
 
 .item__icon-toggle {
   position: relative;
+  display: none;
   width: 1em;
   height: 1em;
+}
+
+.main-content:hover .item__icon-toggle {
+  display: block;
 }
 
 .item__icon-toggle::before,
@@ -88,6 +93,8 @@ button {
   transform: translate(-50%, -50%);
   background-color: var(--clr-neutral-999);
   border-radius: 1000vh;
+
+  transition: transform 200ms ease-in-out;
 }
 
 .item__icon-toggle::after {
@@ -100,8 +107,16 @@ button {
 
 .item__img img {
   margin-inline: auto;
-  height: 15em;
+  height: 20em;
   object-fit: contain;
+}
+
+.item:focus .item__icon-toggle::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.item:focus .item__icon-toggle::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .item:focus .item__img {

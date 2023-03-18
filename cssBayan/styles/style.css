@@ -56,3 +56,32 @@ h1 {
 .item {
   --flow-spacer: 1.25rem;
 }
+
+.item__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item__icon-toggle {
+  position: relative;
+  width: 1em;
+  height: 1em;
+}
+
+.item__icon-toggle::before,
+.item__icon-toggle::after {
+  content: '';
+  position: absolute;
+  width: 0.2em;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--clr-neutral-999);
+  border-radius: 1000vh;
+}
+
+.item__icon-toggle::after {
+  transform: translate(-50%, -50%) rotate(-90deg);
+}

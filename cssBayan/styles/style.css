@@ -59,7 +59,7 @@ a {
 }
 
 .item {
-  --item-transition: 300ms ease-in-out;
+  --item-transition: 300ms ease-out;
   --item-color: var(--clr-primary-400);
 
   display: block;
@@ -67,6 +67,8 @@ a {
   padding-block: 0.25rem;
   color: var(--item-color);
   cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .main-content:hover .item {
@@ -173,5 +175,4 @@ a {
 
 .item:active .item__img img {
   filter: opacity(50%);
-  transition: none;
 }

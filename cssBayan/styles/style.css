@@ -59,8 +59,9 @@ a {
 }
 
 .item {
-  --item-transition: 300ms ease-out;
   --item-color: var(--clr-primary-400);
+  --item-image-height: 14em;
+  --item-transition: 300ms ease-out;
 
   display: block;
   width: 100%;
@@ -119,10 +120,6 @@ a {
   transform: translate(-50%, -50%) rotate(-90deg);
 }
 
-.item__img {
-  --img-height: 14em;
-}
-
 .item__img img {
   margin-inline: auto;
   height: 0;
@@ -140,7 +137,7 @@ a {
 
 .item:target .item__img img,
 .main-content:not(:has(.item:target)) .item:first-child .item__img img {
-  height: var(--img-height);
+  height: var(--item-image-height);
   filter: opacity(1);
 }
 
@@ -164,7 +161,7 @@ a {
   }
 
   .item:hover .item__img img {
-    height: var(--img-height);
+    height: var(--item-image-height);
     filter: opacity(1);
   }
 }

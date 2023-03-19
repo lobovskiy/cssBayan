@@ -37,6 +37,8 @@ a {
   color: inherit;
 }
 
+/* Basic blocks */
+
 .container {
   --max-width: 30rem;
   --padding: 1rem;
@@ -58,6 +60,8 @@ a {
   display: inline-block;
 }
 
+/* List item */
+
 .item {
   --item-color: var(--clr-primary-400);
   --item-image-height: 14em;
@@ -72,23 +76,32 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.main-content:hover .item {
+.item:target,
+.memes-list:not(:has(.item:target)) .item:first-child {
+  color: var(--clr-neutral-999);
+}
+
+.memes-list:hover .item {
   --item-color: var(--clr-neutral-999);
 
   color: var(--item-color);
 }
 
-.main-content .item:active {
+.memes-list .item:active {
   --item-color: var(--clr-primary-400);
 
   color: var(--item-color);
 }
+
+/* Item title bar */
 
 .item__bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+/* Title bar icon */
 
 .item__icon-toggle {
   position: relative;
@@ -97,7 +110,7 @@ a {
   height: 1em;
 }
 
-.main-content:hover .item__icon-toggle {
+.memes-list:hover .item__icon-toggle {
   display: block;
 }
 
@@ -120,6 +133,28 @@ a {
   transform: translate(-50%, -50%) rotate(-90deg);
 }
 
+@media (hover: hover) {
+  .item:hover .item__icon-toggle::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .item:hover .item__icon-toggle::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.item:target .item__icon-toggle::before,
+.memes-list:not(:has(.item:target)) .item:first-child .item__icon-toggle::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.item:target .item__icon-toggle::after,
+.memes-list:not(:has(.item:target)) .item:first-child .item__icon-toggle::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Item image */
+
 .item__img img {
   margin-inline: auto;
   height: 0;
@@ -130,36 +165,13 @@ a {
     filter var(--item-transition);
 }
 
-.item:target,
-.main-content:not(:has(.item:target)) .item:first-child {
-  color: var(--clr-neutral-999);
-}
-
 .item:target .item__img img,
-.main-content:not(:has(.item:target)) .item:first-child .item__img img {
+.memes-list:not(:has(.item:target)) .item:first-child .item__img img {
   height: var(--item-image-height);
   filter: opacity(1);
 }
 
-.item:target .item__icon-toggle::before,
-.main-content:not(:has(.item:target)) .item:first-child .item__icon-toggle::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.item:target .item__icon-toggle::after,
-.main-content:not(:has(.item:target)) .item:first-child .item__icon-toggle::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
 @media (hover: hover) {
-  .item:hover .item__icon-toggle::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-
-  .item:hover .item__icon-toggle::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-
   .item:hover .item__img img {
     height: var(--item-image-height);
     filter: opacity(1);

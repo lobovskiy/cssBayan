@@ -85,7 +85,7 @@ a {
 
 .item {
   --item-color: var(--clr-primary-400);
-  --item-image-height: max(10em, 25vh);
+  --item-image-height: max(9em, 25vh);
   --item-transition: 300ms ease-out;
 
   display: block;
@@ -95,6 +95,12 @@ a {
   cursor: pointer;
 
   -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 50em) and (orientation: portrait) {
+  .item {
+    --item-image-height: 50vh;
+  }
 }
 
 .item:target,
